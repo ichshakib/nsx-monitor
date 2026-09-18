@@ -1,9 +1,9 @@
 // @see - https://www.electron.build/configuration/configuration
 {
   "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
-  "appId": "YourAppID",
+  "appId": "com.nsx.monitor",
   "asar": true,
-  "productName": "YourAppName",
+  "productName": "NSX Monitor",
   "directories": {
     "output": "release/${version}"
   },
@@ -26,6 +26,7 @@
         ]
       }
     ],
+    "icon": "public/icons/win/icon.ico",
     "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
   },
   "nsis": {
@@ -38,6 +39,13 @@
     "target": [
       "AppImage"
     ],
+    "category": "Utility",
     "artifactName": "${productName}-Linux-${version}.${ext}"
+  },
+  "publish": {
+    "provider": "github",
+    "owner": "lwshakib",
+    "repo": "nsx-monitor",
+    "releaseType": "release"
   }
 }

@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# NSX Monitor - Desktop Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The desktop agent for the NSX Monitor ecosystem. It provides high-precision network telemetry and real-time visualization directly on your workstation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Real-time Monitoring**: Tracks download and upload speeds with millisecond precision.
+- **Historical Reporting**: View data consumption trends across days, weeks, months, and years.
+- **Floating Widget**: A minimal, always-on-top HUD to keep your speeds in sight without cluttering your workspace.
+- **Hardware Integration**: Automatically detects and monitors multiple network interfaces (Ethernet, Wi-Fi).
+- **Local Persistence**: Stores everything locally in a JSON database; your data never leaves your machine.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Technology Stack
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- **Framework**: [Electron](https://www.electronjs.org/)
+- **Frontend**: [React 18](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Data Visualization**: [Recharts](https://recharts.org/)
+- **Telemetry**: [systeminformation](https://systeminformation.io/)
+
+---
+
+## 🚀 Getting Started
+
+### Development
+```bash
+# From the root of the monorepo
+pnpm --filter desktop dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Building for Production
+```bash
+# Builds the application for your current platform
+pnpm --filter desktop build
+```
+
+---
+
+## 📦 Distribution & Storage
+
+### Database Location
+The historical network data is stored in the user's data directory as `network_data.json`.
+- **Windows**: `%APPDATA%/NSX Monitor/network_data.json`
+- **macOS**: `~/Library/Application Support/NSX Monitor/network_data.json`
+- **Linux**: `~/.config/NSX Monitor/network_data.json`
+
+### Supported Platforms
+- Windows 10/11 (x64/ARM64)
+- macOS (Intel/Apple Silicon)
+- Linux (AppImage)

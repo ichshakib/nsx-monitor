@@ -19,6 +19,20 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     return ipcRenderer.invoke(channel, ...omit)
   },
 
-  // You can expose other APTs you need here.
-  // ...
+  // Specialized handlers
+  onNetworkStats(callback: (stats: NetworkStats) => void) {
+    const listener = (_: unknown, stats: NetworkStats) => callback(stats)
+    ipcRenderer.on('network-stats', listener)
+    return () => ipcRenderer.off('network-stats', listener)
+  },
+  onAppSettingsUpdate(callback: (settings: Record<string, string | boolean>) => void) {
+    const listener = (_: unknown, settings: Record<string, string | boolean>) => callback(settings)
+    ipcRenderer.on('app-settings-updated', listener)
+    return () => ipcRenderer.off('app-settings-updated', listener)
+  },
+  onDashboardShown(callback: () => void) {
+    const listener = () => callback()
+    ipcRenderer.on('dashboard-shown', listener)
+    return () => ipcRenderer.off('dashboard-shown', listener)
+  }
 })
