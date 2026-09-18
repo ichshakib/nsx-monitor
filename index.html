@@ -1,467 +1,164 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NSX Monitor | Precision Network Telemetry</title>
-  <meta name="description" content="Real-time bandwidth monitoring, historical data tracking, and a sleek desktop widget for Windows, macOS, and Linux.">
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>NSX Monitor - Official Homepage (v0.1.12)</title>
+  <meta name="description" content="NSX Monitor - High precision bandwidth monitoring utility for Windows, macOS, and Linux.">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Ambient Grid & Glow Mesh -->
-  <div class="bg-grid"></div>
-  <div class="bg-gradient-mesh"></div>
+
+<div class="page-container">
+
+  <!-- Header -->
+  <div class="page-header">
+    <img src="assets/images/logo.svg" width="48" height="48" alt="NSX Monitor Logo"><br>
+    <div class="page-title">NSX MONITOR</div>
+    <div class="page-subtitle">High-Precision Desktop Network Bandwidth Utility</div>
+    <div class="page-meta">Version 0.1.12 &bull; Open Source Freeware</div>
+  </div>
+
+  <hr class="retro-hr">
 
   <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="ui-container nav-content">
-      <a href="#" class="nav-brand">
-        <img src="assets/images/logo.svg" alt="NSX Monitor Logo">
-        <span>NSX Monitor</span>
+  <div class="retro-nav">
+    [ <a href="#about">About</a> ] &bull;
+    [ <a href="#features">Features</a> ] &bull;
+    [ <a href="#specs">System Specs</a> ] &bull;
+    [ <a href="#download"><b>Download</b></a> ] &bull;
+    [ <a href="https://github.com/ichshakib/nsx-monitor" target="_blank">GitHub Repository</a> ] &bull;
+    [ <a href="./CONTRIBUTING.md">Contributing</a> ] &bull;
+    [ <a href="./LICENSE">License</a> ]
+  </div>
+
+  <!-- Product Overview -->
+  <fieldset id="about">
+    <legend>Product Overview</legend>
+    <p>
+      <b>NSX Monitor</b> is a lightweight network monitoring utility designed for developers, network engineers, and system power users. It provides sub-second byte tracking (Rx/Tx), interface throughput statistics, latency tracking, and an always-on-top desktop overlay widget.
+    </p>
+    <p>
+      Built for speed and low resource usage, all bandwidth metrics remain 100% private and stored locally on your machine with zero remote tracking.
+    </p>
+  </fieldset>
+
+  <!-- Key Features Table -->
+  <fieldset id="features">
+    <legend>Core Features</legend>
+
+    <table class="retro-table" border="1" cellpadding="4" cellspacing="0">
+      <thead>
+        <tr>
+          <th width="30%">Feature</th>
+          <th width="70%">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Real-Time Polling</b></td>
+          <td>Sub-second tracking of incoming and outgoing bandwidth across all connected network adapters.</td>
+        </tr>
+        <tr>
+          <td><b>Desktop Overlay Widget</b></td>
+          <td>Always-on-top compact mini-window for gaming, streaming, and programming.</td>
+        </tr>
+        <tr>
+          <td><b>Historical Usage Logs</b></td>
+          <td>Query past traffic consumption over 1 hour, 24 hours, 7 days, and 30 days.</td>
+        </tr>
+        <tr>
+          <td><b>Bandwidth Alerts</b></td>
+          <td>Set custom threshold limits with system notifications when bandwidth spikes.</td>
+        </tr>
+        <tr>
+          <td><b>Multi-Adapter Detection</b></td>
+          <td>Automatically detect Ethernet, Wi-Fi, and virtual VPN adapters.</td>
+        </tr>
+        <tr>
+          <td><b>100% Local Privacy</b></td>
+          <td>No telemetry sent to remote servers. All metric logs stay strictly on your local PC.</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+
+  <!-- System Specifications Table -->
+  <fieldset id="specs">
+    <legend>System Requirements</legend>
+    <table class="retro-table" border="1" cellpadding="4" cellspacing="0">
+      <tbody>
+        <tr>
+          <td width="35%"><b>Supported Platforms</b></td>
+          <td>Windows 10 / 11 (64-bit), macOS 12+, Linux (Ubuntu, Debian, Fedora)</td>
+        </tr>
+        <tr>
+          <td><b>Memory Footprint</b></td>
+          <td>Approximately 12MB - 15MB RAM</td>
+        </tr>
+        <tr>
+          <td><b>Network Protocols</b></td>
+          <td>IPv4 / IPv6, TCP/IP Stack, UDP Socket Telemetry</td>
+        </tr>
+        <tr>
+          <td><b>License</b></td>
+          <td>MIT License (100% Free &amp; Open Source Software)</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+
+  <!-- Download Section -->
+  <fieldset id="download">
+    <legend>Download NSX Monitor (v0.1.12)</legend>
+    <center>
+      <p>Select the installer for your operating system:</p>
+
+      <table class="retro-table" border="1" cellpadding="6" cellspacing="0" style="max-width: 600px;">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Package</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Windows</b> (10/11 x64)</td>
+            <td>nsx-monitor-setup.exe</td>
+            <td><a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="retro-btn">Download .EXE</a></td>
+          </tr>
+          <tr>
+            <td><b>macOS</b> (Intel &amp; Apple Silicon)</td>
+            <td>nsx-monitor-installer.dmg</td>
+            <td><a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="retro-btn">Download .DMG</a></td>
+          </tr>
+          <tr>
+            <td><b>Linux</b> (All distros)</td>
+            <td>nsx-monitor.AppImage</td>
+            <td><a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="retro-btn">Download .AppImage</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+      <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="retro-btn retro-btn-large">
+        View All Releases &amp; Checksums on GitHub
       </a>
+    </center>
+  </fieldset>
 
-      <!-- Desktop Navigation Links -->
-      <ul class="nav-links">
-        <li>
-          <a href="#features" class="nav-link">
-            <span class="nav-dot"></span>
-            Features
-          </a>
-        </li>
-        <li>
-          <a href="#capabilities" class="nav-link">
-            <span class="nav-dot"></span>
-            Capabilities
-          </a>
-        </li>
-        <li>
-          <a href="#topology" class="nav-link">
-            <span class="nav-dot"></span>
-            Topology
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/ichshakib/nsx-monitor" target="_blank" class="nav-link">
-            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
-        </li>
-      </ul>
-
-      <div class="nav-actions">
-        <!-- Theme Toggle -->
-        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Theme">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        </button>
-
-        <!-- Download CTA -->
-        <a href="#downloads" class="btn btn-primary btn-sm">
-          Download
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="ui-section hero-section" id="hero">
-    <div class="ui-container">
-      <span class="corner-marker corner-tl">+</span>
-      <span class="corner-marker corner-tr">+</span>
-
-      <div class="system-badge">
-        <span class="beacon-dot"></span>
-        <span>System Online</span>
-      </div>
-
-      <h1 class="hero-title">
-        Real-time Network Telemetry for Your Workspace.
-      </h1>
-
-      <p class="hero-desc">
-        A high-performance desktop application for real-time bandwidth monitoring, historical usage tracking, and intelligent network diagnostics across all Windows interfaces.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#downloads" class="btn btn-primary">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Desktop
-        </a>
-        <a href="https://github.com/ichshakib/nsx-monitor" target="_blank" class="btn btn-secondary">
-          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          View Source
-        </a>
-      </div>
-
-      <span class="corner-marker corner-bl">+</span>
-      <span class="corner-marker corner-br">+</span>
-    </div>
-  </section>
-
-  <!-- Expansion & Scalability Section -->
-  <section class="ui-section" id="features">
-    <div class="ui-container" style="border-top: 1px solid var(--ui-border); padding-top: 80px;">
-      <span class="corner-marker corner-tl">+</span>
-      <span class="corner-marker corner-tr">+</span>
-
-      <div class="section-header-compact">
-        <span class="section-tag">Performance Scalability</span>
-        <div class="section-divider"></div>
-        <span class="section-subtag">Mesh Architecture</span>
-      </div>
-
-      <div class="expansion-card">
-        <!-- Level 1: Primary Core -->
-        <div class="tree-node-core">
-          <div style="font-size: 28px; margin-bottom: 8px;">🌐</div>
-          <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">Network Engine</h3>
-          <p style="color: var(--ui-text-muted); font-size: 0.85rem; line-height: 1.5;">
-            Low-level packet inspection and throughput calculation for all active interfaces.
-          </p>
-        </div>
-
-        <div class="tree-line-v"></div>
-
-        <!-- Level 2: Historical & Traffic Analysis -->
-        <div class="tree-level-2">
-          <div class="tree-sub-card">
-            <div style="font-size: 20px; margin-bottom: 6px;">⏱️</div>
-            <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">Historical Data</h4>
-            <p style="color: var(--ui-text-muted); font-size: 0.8rem;">
-              Persistent local storage logs hourly and daily bandwidth metrics for retrospective analysis.
-            </p>
-          </div>
-
-          <div class="tree-sub-card">
-            <div style="font-size: 20px; margin-bottom: 6px;">📊</div>
-            <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 4px;">Traffic Analysis</h4>
-            <p style="color: var(--ui-text-muted); font-size: 0.8rem;">
-              Real-time Rx/Tx byte tracking with visual charting for desktop performance.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Core Primitives (Capabilities) -->
-  <section class="ui-section" id="capabilities">
-    <div class="ui-container" style="border-top: 1px solid var(--ui-border); padding-top: 80px;">
-      <span class="corner-marker corner-tl">+</span>
-      <span class="corner-marker corner-tr">+</span>
-
-      <div class="section-header-compact">
-        <span class="section-tag">Core Primitives</span>
-        <div class="section-divider"></div>
-        <span class="section-subtag">System Capabilities</span>
-      </div>
-
-      <div class="grid-primitives">
-        <!-- Module 01 -->
-        <div class="primitive-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-            <div class="primitive-icon">📦</div>
-            <span class="primitive-module">Module 01</span>
-          </div>
-          <h3>Live Monitoring</h3>
-          <p>
-            High-fidelity tracking of Rx and Tx bytes across all network interfaces with sub-second accuracy and real-time visualization.
-          </p>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
-            <div class="equalizer-group">
-              <div class="equalizer-bar anim-bar-1"></div>
-              <div class="equalizer-bar anim-bar-2"></div>
-              <div class="equalizer-bar anim-bar-3"></div>
-              <div class="equalizer-bar anim-bar-4"></div>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">ACTIVE</span>
-          </div>
-        </div>
-
-        <!-- Module 02 -->
-        <div class="primitive-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-            <div class="primitive-icon">⚡</div>
-            <span class="primitive-module">Module 02</span>
-          </div>
-          <h3>Historical Insights</h3>
-          <p>
-            Comprehensive data persistence that logs your bandwidth usage over days, weeks, and months for deep retrospective analysis.
-          </p>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
-            <div class="equalizer-group">
-              <div class="equalizer-bar anim-bar-3"></div>
-              <div class="equalizer-bar anim-bar-5"></div>
-              <div class="equalizer-bar anim-bar-1"></div>
-              <div class="equalizer-bar anim-bar-2"></div>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">PROCESSING</span>
-          </div>
-        </div>
-
-        <!-- Module 03 -->
-        <div class="primitive-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
-            <div class="primitive-icon">🪟</div>
-            <span class="primitive-module">Module 03</span>
-          </div>
-          <h3>Minimal Footprint</h3>
-          <p>
-            A lightweight desktop overlay widget and system tray integration designed to monitor network throughput without interrupting your workflow.
-          </p>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: auto;">
-            <div class="equalizer-group">
-              <div class="equalizer-bar anim-bar-4"></div>
-              <div class="equalizer-bar anim-bar-2"></div>
-              <div class="equalizer-bar anim-bar-5"></div>
-              <div class="equalizer-bar anim-bar-1"></div>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">STANDBY</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Network Intelligence / Topology Bento Grid -->
-  <section class="ui-section" id="topology">
-    <div class="ui-container" style="border-top: 1px solid var(--ui-border); padding-top: 80px;">
-      <span class="corner-marker corner-tl">+</span>
-      <span class="corner-marker corner-tr">+</span>
-
-      <div class="section-header-compact">
-        <span class="section-tag">Network Intelligence</span>
-        <div class="section-divider"></div>
-        <span class="section-subtag">Telemetry Topology</span>
-      </div>
-
-      <div class="bento-grid">
-        <!-- Live Throughput Box -->
-        <div class="bento-card bento-large">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span class="system-badge" style="margin-bottom: 0;">
-              <span class="beacon-dot"></span>
-              Live Feed
-            </span>
-            <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ui-text-muted);">0.5s Poll</span>
-          </div>
-
-          <div style="display: flex; align-items: flex-end; justify-content: center; gap: 8px; height: 100px; margin: 20px 0;">
-            <div class="equalizer-bar anim-bar-1" style="width: 8px; height: 50%;"></div>
-            <div class="equalizer-bar anim-bar-2" style="width: 8px; height: 90%;"></div>
-            <div class="equalizer-bar anim-bar-3" style="width: 8px; height: 40%; background: var(--ui-text);"></div>
-            <div class="equalizer-bar anim-bar-4" style="width: 8px; height: 75%;"></div>
-            <div class="equalizer-bar anim-bar-5" style="width: 8px; height: 60%;"></div>
-            <div class="equalizer-bar anim-bar-2" style="width: 8px; height: 85%;"></div>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 12px;">Real-Time Throughput</h3>
-            <div style="display: flex; gap: 32px; border-top: 1px solid var(--ui-border); padding-top: 12px;">
-              <div>
-                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">DOWNLOAD</div>
-                <div id="bento-down" style="font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan);">42.5 MB/s</div>
-              </div>
-              <div>
-                <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">UPLOAD</div>
-                <div id="bento-up" style="font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--accent-emerald);">8.2 MB/s</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3D Layer Tray Integration Box -->
-        <div class="bento-card bento-medium">
-          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted); text-transform: uppercase;">
-            Z-Axis Integration
-          </div>
-
-          <div class="layer-float-wrap">
-            <div class="layer-box layer-3">L1: DB</div>
-            <div class="layer-box layer-2">L2: IPC</div>
-            <div class="layer-box layer-1">L3: UI</div>
-          </div>
-
-          <div>
-            <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 6px;">Tray Integration</h3>
-            <p style="font-size: 0.8rem; color: var(--ui-text-muted);">Background daemon with tray actions and quick settings.</p>
-          </div>
-        </div>
-
-        <!-- Metric Card: Uptime -->
-        <div class="bento-card bento-medium">
-          <div style="font-size: 20px;">🛡️</div>
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 2.2rem; font-weight: 700; color: var(--ui-text);">99.99%</div>
-            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted); text-transform: uppercase;">Uptime Integrity</div>
-          </div>
-        </div>
-
-        <!-- Low Impact Design Banner -->
-        <div class="bento-card bento-wide">
-          <div style="max-width: 500px;">
-            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 6px;">Low Impact Design</h3>
-            <p style="color: var(--ui-text-muted); font-size: 0.9rem; font-weight: 300;">
-              Optimized bindings ensure NSX Monitor stays silent in the background with negligible CPU and memory usage on your system.
-            </p>
-          </div>
-
-          <div style="display: flex; gap: 40px;">
-            <div>
-              <div style="font-family: var(--font-mono); font-size: 2rem; font-weight: 700;">1s</div>
-              <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">RESOLUTION</div>
-            </div>
-            <div>
-              <div style="font-family: var(--font-mono); font-size: 2rem; font-weight: 700;">12<span style="font-size: 1rem; color: var(--ui-text-muted);">MB</span></div>
-              <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-muted);">FOOTPRINT</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Showcase & Screenshot Previews -->
-  <section class="ui-section">
-    <div class="ui-container" style="border-top: 1px solid var(--ui-border); padding-top: 80px;">
-      <span class="corner-marker corner-tl">+</span>
-      <span class="corner-marker corner-tr">+</span>
-
-      <div class="marquee-wrap">
-        <div class="marquee-content">
-          <span>Engine Deployment • Precision Diagnostics • Telemetry Studio • Network Monitoring •&nbsp;</span>
-          <span>Engine Deployment • Precision Diagnostics • Telemetry Studio • Network Monitoring •&nbsp;</span>
-        </div>
-      </div>
-
-      <div class="showcase-wrapper">
-        <div class="showcase-box">
-          <div class="tabs-group">
-            <button class="tab-btn active" data-tab="dark">Dark Theme</button>
-            <button class="tab-btn" data-tab="light">Light Theme</button>
-          </div>
-
-          <div class="preview-media-container">
-            <img id="previewDark" src="assets/images/app_dark_demo.png" alt="NSX Monitor Dark Interface Demo">
-            <img id="previewLight" src="assets/images/app_light_demo.png" alt="NSX Monitor Light Interface Demo" style="display: none;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Downloads Section -->
-  <section class="ui-section" id="downloads">
-    <div class="ui-container" style="border-top: 1px solid var(--ui-border); padding-top: 80px;">
-      <span class="corner-marker corner-tl">+</span>
-      <span class="corner-marker corner-tr">+</span>
-
-      <div class="section-header-compact">
-        <span class="section-tag">Release Distribution</span>
-        <div class="section-divider"></div>
-        <span class="section-subtag">v0.1.12 Packages</span>
-      </div>
-
-      <div class="download-cards-grid">
-        <div class="dl-card">
-          <div class="dl-icon">🪟</div>
-          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 6px;">Windows</h3>
-          <p style="color: var(--ui-text-muted); font-size: 0.85rem; margin-bottom: 20px;">Windows 10 / 11 (64-bit)</p>
-          <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="btn btn-primary btn-sm">Download (.exe)</a>
-        </div>
-
-        <div class="dl-card">
-          <div class="dl-icon">🍎</div>
-          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 6px;">macOS</h3>
-          <p style="color: var(--ui-text-muted); font-size: 0.85rem; margin-bottom: 20px;">macOS 12+ (Intel & Apple Silicon)</p>
-          <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="btn btn-secondary btn-sm">Download (.dmg)</a>
-        </div>
-
-        <div class="dl-card">
-          <div class="dl-icon">🐧</div>
-          <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 6px;">Linux</h3>
-          <p style="color: var(--ui-text-muted); font-size: 0.85rem; margin-bottom: 20px;">Ubuntu, Fedora, Debian</p>
-          <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="btn btn-secondary btn-sm">Download (.AppImage)</a>
-        </div>
-      </div>
-
-      <!-- Typewriter CTA Box -->
-      <div class="cta-box">
-        <div class="system-badge" style="margin-bottom: 16px;">
-          <span class="beacon-dot"></span>
-          <span>Ready for Deployment</span>
-        </div>
-
-        <h2 class="typewriter-text">&gt; get_nsx_monitor()</h2>
-
-        <a href="#downloads" class="btn btn-primary" style="padding: 12px 28px;">
-          Download Now
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <hr class="retro-hr">
 
   <!-- Footer -->
-  <footer class="footer-wrap">
-    <div class="ui-container" style="border: none;">
-      <div class="footer-grid">
-        <div style="grid-column: span 2;">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-            <img src="assets/images/logo.svg" width="24" height="24" alt="NSX Monitor">
-            <span style="font-weight: 700; font-size: 1rem;">NSX Monitor</span>
-          </div>
-          <p style="color: var(--ui-text-muted); font-size: 0.85rem; max-width: 320px; line-height: 1.6; font-weight: 300;">
-            A high-fidelity network telemetry engine designed for precision monitoring. Track, analyze, and optimize your bandwidth with tactile desktop tools.
-          </p>
-        </div>
+  <div class="page-footer">
+    <p>
+      &copy; 2026 NSX Monitor Project. Maintained by <a href="https://github.com/ichshakib" target="_blank">Shakib Khan</a>.<br>
+      Released under the <a href="./LICENSE">MIT License</a>.
+    </p>
+  </div>
 
-        <div class="footer-col">
-          <h4>Platform</h4>
-          <ul>
-            <li><a href="#features">Engine</a></li>
-            <li><a href="#topology">Topology</a></li>
-            <li><a href="#capabilities">Capabilities</a></li>
-            <li><a href="#downloads">Downloads</a></li>
-          </ul>
-        </div>
+</div>
 
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="./README.md">Documentation</a></li>
-            <li><a href="./CONTRIBUTING.md">Contributing</a></li>
-            <li><a href="./CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-            <li><a href="./LICENSE">MIT License</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="https://github.com/ichshakib/nsx-monitor" target="_blank">GitHub</a></li>
-            <li><a href="https://github.com/ichshakib/nsx-monitor/issues" target="_blank">Issues</a></li>
-            <li><a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank">Releases</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-family: var(--font-mono); font-size: 10px; color: var(--ui-text-dim);">
-        <div>© 2026 NSX Monitor. Open source under the MIT License.</div>
-        <div>Engineered with precision by <a href="https://github.com/ichshakib" target="_blank" style="color: var(--ui-text); text-decoration: none;">Shakib Khan</a>.</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
