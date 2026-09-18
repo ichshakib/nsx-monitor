@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSX Monitor | High-Precision Network Telemetry Suite</title>
+  <meta name="description" content="Professional-grade network bandwidth monitor with real-time telemetry, historical trends, customizable alerts, and floating desktop widget.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Ambient Grid & Glow Effects -->
+  <div class="bg-grid"></div>
+  <div class="glow-orb glow-orb-top"></div>
+  <div class="glow-orb glow-orb-mid"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="nav-brand">
+        <img src="assets/images/logo.svg" alt="NSX Monitor Logo">
+        <span>NSX Monitor</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#preview" class="nav-link">Preview</a></li>
+        <li><a href="#downloads" class="nav-link">Downloads</a></li>
+        <li><a href="https://github.com/ichshakib/nsx-monitor" target="_blank" class="nav-link">GitHub</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#downloads" class="btn btn-primary btn-sm">Get App</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>v0.1.12 • High-Precision Bandwidth Telemetry</span>
+      </div>
+
+      <h1 class="hero-title">
+        Real-Time Network Telemetry<br>for Power Users & Engineers
+      </h1>
+
+      <p class="hero-subtitle">
+        Monitor interface throughput, track long-term bandwidth history, receive smart threshold warnings, and switch seamlessly into a floating desktop widget.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#downloads" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Desktop App
+        </a>
+        <a href="https://github.com/ichshakib/nsx-monitor" target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View Source Code
+        </a>
+      </div>
+
+      <!-- Live Mock Telemetry Card -->
+      <div class="telemetry-preview">
+        <div class="preview-header">
+          <div class="preview-title-group">
+            <span style="font-weight: 700; font-size: 0.95rem;">Active Telemetry Feed</span>
+            <span style="color: var(--text-dim); font-size: 0.85rem;">(Wi-Fi / Ethernet 0)</span>
+          </div>
+          <div class="preview-status">
+            <span class="status-pulse"></span>
+            LIVE STREAM
+          </div>
+        </div>
+
+        <div class="telemetry-metrics">
+          <div class="metric-card">
+            <div class="metric-label">
+              <span>Download Speed</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m7-7-7 7-7-7"/></svg>
+            </div>
+            <div class="metric-val download" id="val-download">48.5 MB/s</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">
+              <span>Upload Speed</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19V5m-7 7 7-7 7 7"/></svg>
+            </div>
+            <div class="metric-val upload" id="val-upload">12.3 MB/s</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">
+              <span>Network Latency</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="metric-val latency" id="val-latency">14 ms</div>
+          </div>
+        </div>
+
+        <div class="canvas-container">
+          <canvas id="telemetryChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Capabilities</div>
+        <h2 class="section-title">Engineered for Network Transparency</h2>
+        <p class="section-desc">Everything you need to monitor, analyze, and optimize your connection throughput.</p>
+      </div>
+
+      <div class="grid-features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Sub-Second Precision</h3>
+          <p>Continuous network polling with instant updates for upload rates, download bandwidth, and connection latency.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3>Floating Desktop Widget</h3>
+          <p>Switch between full analytics dashboard and a compact, unobtrusive floating overlay for gaming and live streaming.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3>Smart Threshold Alerts</h3>
+          <p>Set custom bandwidth triggers and receive instant alerts when traffic exceeds or drops below your defined levels.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </div>
+          <h3>Historical Analytics</h3>
+          <p>Track cumulative data consumption over 1 hour, 24 hours, 7 days, or 30 days with interactive charts.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+          </div>
+          <h3>Multi-Interface Detection</h3>
+          <p>Easily switch between Wi-Fi adapters, Ethernet ports, and VPN tunnels with automatic adapter identification.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>100% Local & Private</h3>
+          <p>Telemetry metrics stay on your computer. Embedded JSON database ensures zero third-party telemetry tracking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section -->
+  <section id="preview" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Interface</div>
+        <h2 class="section-title">Built for Clarity and Focus</h2>
+        <p class="section-desc">Designed with both Dark and Light theme options for high readability in any environment.</p>
+      </div>
+
+      <div class="showcase-container">
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="dark">Dark Theme</button>
+          <button class="tab-btn" data-tab="light">Light Theme</button>
+        </div>
+
+        <div class="showcase-view">
+          <img id="demo-dark" src="assets/images/app_dark_demo.png" alt="NSX Monitor Dark Mode Preview">
+          <img id="demo-light" src="assets/images/app_light_demo.png" alt="NSX Monitor Light Mode Preview" style="display: none;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads Section -->
+  <section id="downloads" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Distribution</div>
+        <h2 class="section-title">Download NSX Monitor</h2>
+        <p class="section-desc">Available as a standalone installer or portable binary across major operating systems.</p>
+      </div>
+
+      <div class="download-grid">
+        <div class="download-card">
+          <div class="os-icon">🪟</div>
+          <h3>Windows</h3>
+          <p>Windows 10 / 11 (64-bit)</p>
+          <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="btn btn-primary btn-sm">Download (.exe)</a>
+        </div>
+
+        <div class="download-card">
+          <div class="os-icon">🍎</div>
+          <h3>macOS</h3>
+          <p>macOS 12+ (Intel & Apple Silicon)</p>
+          <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="btn btn-secondary btn-sm">Download (.dmg)</a>
+        </div>
+
+        <div class="download-card">
+          <div class="os-icon">🐧</div>
+          <h3>Linux</h3>
+          <p>Ubuntu, Fedora, Debian</p>
+          <a href="https://github.com/ichshakib/nsx-monitor/releases" target="_blank" class="btn btn-secondary btn-sm">Download (.AppImage)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="assets/images/logo.svg" width="24" height="24" alt="NSX Monitor">
+          <span style="font-weight: 600; color: var(--text-main);">NSX Monitor</span>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="https://github.com/ichshakib/nsx-monitor" target="_blank">GitHub</a></li>
+          <li><a href="https://github.com/ichshakib/nsx-monitor/blob/main/CONTRIBUTING.md">Contributing</a></li>
+          <li><a href="https://github.com/ichshakib/nsx-monitor/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+          <li><a href="https://github.com/ichshakib/nsx-monitor/blob/main/LICENSE">MIT License</a></li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.85rem;">
+        Built with precision by <a href="https://github.com/ichshakib" target="_blank" style="color: var(--accent-cyan); text-decoration: none;">Shakib Khan</a>. Open source under the MIT License.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
